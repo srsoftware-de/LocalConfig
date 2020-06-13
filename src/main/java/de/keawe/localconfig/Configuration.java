@@ -122,7 +122,7 @@ public class Configuration extends TreeMap<String,String>{
 		return super.put(key.trim(), value.trim());
 	}
 	
-	public String put(String key, long value) {
+	public String put(String key, Number value) {
 		return put(key,""+value);
 	}
 	
