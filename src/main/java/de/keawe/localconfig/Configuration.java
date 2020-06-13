@@ -68,12 +68,26 @@ public class Configuration extends TreeMap<String,String>{
 		return defaultValue;
 	}
 	
+	public double getOrAddDouble(String key, double defaultValue) throws IOException {
+		Double d = getDouble(key);
+		if (d != null) return d;
+		put(key,""+defaultValue);
+		save();
+		return defaultValue;
+	}
+	
 	public int getOrAddInt(String key, int defaultValue) throws IOException  {
 		Integer i = getInt(key);
 		if (i != null) return i;
 		put(key,""+defaultValue);
 		save();
 		return defaultValue;
+	}
+	
+	public Double getDouble(String key) {
+		String s = get(key);
+		if (s==null) return null;
+		return Double.parseDouble(s);
 	}
 	
 	public Integer getInt(String key) {

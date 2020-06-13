@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.keawe</groupId>
 	<artifactId>local-config</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>Local Config</name>
 	<description>Library to store and load configurations in local files</description>
 	<url>https://github.com/keawe-software/LocalConfig</url>
@@ -74,6 +74,7 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
