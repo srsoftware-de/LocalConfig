@@ -68,7 +68,15 @@ public class Configuration extends TreeMap<String,String>{
 		return defaultValue;
 	}
 	
-	public double getOrAddDouble(String key, double defaultValue) throws IOException {
+	public boolean getOrAdd(String key, boolean defaultValue) throws IOException {
+		Boolean b = getBool(key);
+		if (b != null) return b;
+		put(key,defaultValue?"true":"false");
+		save();
+		return defaultValue;
+	}
+	
+	public double getOrAdd(String key, double defaultValue) throws IOException {
 		Double d = getDouble(key);
 		if (d != null) return d;
 		put(key,""+defaultValue);
@@ -76,12 +84,24 @@ public class Configuration extends TreeMap<String,String>{
 		return defaultValue;
 	}
 	
-	public int getOrAddInt(String key, int defaultValue) throws IOException  {
+	public int getOrAdd(String key, int defaultValue) throws IOException  {
 		Integer i = getInt(key);
 		if (i != null) return i;
 		put(key,""+defaultValue);
 		save();
 		return defaultValue;
+	}
+	
+	/**
+	 * will evaluate 1 or "true" (ignoring case) as true, every other value as false
+	 * @param key
+	 * @return
+	 */
+	public Boolean getBool(String key) {
+		String s = get(key);
+		if (s == null) return false;
+		s = s.trim().toLowerCase();
+		return s.equals("true") || s.equals("1");
 	}
 	
 	public Double getDouble(String key) {
