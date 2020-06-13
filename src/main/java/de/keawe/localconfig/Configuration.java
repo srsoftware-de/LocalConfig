@@ -11,13 +11,26 @@ import java.util.TreeMap;
 
 import de.keawe.tools.translations.Translation;
 
+/**
+ * This class provides means to save program configuration
+ * @author Stephan Richter
+ *
+ */
 public class Configuration extends TreeMap<String,String>{
 	private File configFile = null;
 	
+	/**
+	 * Load configuration from file
+	 * @param filename the path to the configuration file
+	 */
 	public Configuration(String filename) {
 		this(new File(filename));
 	}
 	
+	/**
+	 * Load configuration from file
+	 * @param f the configuration file
+	 */
 	public Configuration(File f) {
 		super();
 		configFile = f;
