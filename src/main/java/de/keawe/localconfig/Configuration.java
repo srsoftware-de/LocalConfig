@@ -146,6 +146,10 @@ public class Configuration extends TreeMap<String,String>{
 		return put(key,""+value);
 	}
 	
+	public String put(String key, boolean value) {
+		return put(key, value?"true":"false");
+	}
+	
 	public void save() throws IOException {
 		configFile.getParentFile().mkdirs(); // try to create parent path
 		FileWriter file = new FileWriter(configFile);
