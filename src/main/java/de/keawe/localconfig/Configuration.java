@@ -9,6 +9,9 @@ import java.util.AbstractMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import de.keawe.tools.translations.Translation;
 
 /**
@@ -17,6 +20,7 @@ import de.keawe.tools.translations.Translation;
  *
  */
 public class Configuration extends TreeMap<String,String>{
+	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 	private File configFile = null;
 	
 	/**
@@ -37,8 +41,8 @@ public class Configuration extends TreeMap<String,String>{
 		try {
 			load();
 		} catch (IOException e) {
-			System.out.println(Translation.get(this,"Trying to load configuration from non-existing file (#).",f));
-			System.out.println(Translation.get(this,"New configuration file will be created on save."));
+			log.info(Translation.get(this,"Trying to load configuration from non-existing file ({})."),f);
+			log.info(Translation.get(this,"New configuration file will be created on save."));
 		}
 	}
 
@@ -52,8 +56,7 @@ public class Configuration extends TreeMap<String,String>{
 	 * @return
 	 */
 	public static String dir(String programName) {
-		String filename = System.getProperty("user.home")+"/.config/"+programName;
-		return filename;
+		return System.getProperty("user.home")+"/.config/"+programName;
 	}
 	
 	public File file() {
@@ -119,8 +122,7 @@ public class Configuration extends TreeMap<String,String>{
 	public static SimpleEntry<String, String> keyValue(String line) throws UnexpectedException {
 		String [] parts = line.split("=");
 		if (parts.length<2) throw new UnexpectedException("Not a key-value pair: "+line);
-		SimpleEntry<String, String> entry = new AbstractMap.SimpleEntry<String,String>(parts[0].trim(),parts[1].trim());
-		return entry;
+		return new AbstractMap.SimpleEntry<String,String>(parts[0].trim(),parts[1].trim());
 	}
 	
 	private void load() throws IOException {

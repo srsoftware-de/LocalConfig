@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.keawe</groupId>
 	<artifactId>local-config</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 	<name>Local Config</name>
 	<description>Library to store and load configurations in local files</description>
 	<url>https://github.com/keawe-software/LocalConfig</url>
@@ -111,6 +111,7 @@
 				<configuration>
 					<source>1.8</source>
 					<doclint>none</doclint>
+					<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
 				</configuration>
 				<executions>
 					<execution>
