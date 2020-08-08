@@ -3,15 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.keawe</groupId>
+	<groupId>de.srsoftware</groupId>
 	<artifactId>local-config</artifactId>
 	<version>0.0.6</version>
 	<name>Local Config</name>
 	<description>Library to store and load configurations in local files</description>
-	<url>https://github.com/keawe-software/LocalConfig</url>
+	<url>https://github.com/srsoftware-software/LocalConfig</url>
 	<organization>
-		<name>Keawe</name>
-		<url>https://keawe.de</url>
+		<name>SRSoftware</name>
+		<url>https://srsoftware.de</url>
 	</organization>
 
 	<licenses>
@@ -24,16 +24,16 @@
 	<developers>
 		<developer>
 			<name>Stephan Richter</name>
-			<email>s.richter@keawe.de</email>
-			<organization>Keawe</organization>
-			<organizationUrl>http://www.keawe.de</organizationUrl>
+			<email>s.richter@srsoftware.de</email>
+			<organization>SRSoftware</organization>
+			<organizationUrl>http://www.srsoftware.de</organizationUrl>
 		</developer>
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/keawe-software/LocalConfig.git</connection>
-		<developerConnection>scm:git:git@github.com:keawe-software/LocalConfig.git</developerConnection>
-		<url>https://github.com/keawe-software/LocalConfig</url>
+		<connection>scm:git:git://github.com/srsoftware-de/LocalConfig.git</connection>
+		<developerConnection>scm:git:git@github.com:srsoftware-de/LocalConfig.git</developerConnection>
+		<url>https://github.com/srsoftware-de/LocalConfig</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -51,9 +51,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>de.keawe</groupId>
+			<groupId>de.srsoftware</groupId>
 			<artifactId>tools.translations</artifactId>
-			<version>1.1.1</version>
+			<version>1.1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
