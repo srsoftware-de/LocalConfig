@@ -20,6 +20,7 @@ import de.keawe.tools.translations.Translation;
  *
  */
 public class Configuration extends TreeMap<String,String>{
+	private static final long serialVersionUID = 3954350882528757083L;
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 	private File configFile = null;
 	
@@ -120,7 +121,7 @@ public class Configuration extends TreeMap<String,String>{
 	}
 	
 	public static SimpleEntry<String, String> keyValue(String line) throws UnexpectedException {
-		String [] parts = line.split("=");
+		String [] parts = line.split("=",2);
 		if (parts.length<2) throw new UnexpectedException("Not a key-value pair: "+line);
 		return new AbstractMap.SimpleEntry<String,String>(parts[0].trim(),parts[1].trim());
 	}
