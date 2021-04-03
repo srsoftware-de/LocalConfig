@@ -1,4 +1,4 @@
-package de.keawe.localconfig;
+package de.srsoftware.localconfig;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,7 +12,7 @@ import java.util.TreeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import de.keawe.tools.translations.Translation;
+import de.srsoftware.tools.translations.Translation;
 
 /**
  * This class provides means to save program configuration

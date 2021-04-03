@@ -1,12 +1,12 @@
-package de.keawe.examples.localconfig;
+package de.srsoftware.examples.localconfig;
 
 import java.io.IOException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import de.keawe.localconfig.Configuration;
-import de.keawe.tools.translations.Translation;
+import de.srsoftware.localconfig.Configuration;
+import de.srsoftware.tools.translations.Translation;
 
 public class App {
 	private static Logger log = LoggerFactory.getLogger(App.class);
